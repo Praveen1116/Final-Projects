@@ -1,0 +1,476 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding-top: 15rem;
+}
+
+.navBar {
+    box-shadow: 4px 8px 12px rgb(195, 194, 194);
+    margin-bottom: 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: white;
+}
+
+.navBar nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2.5rem 1rem 2.5rem;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    font-weight: bolder;
+}
+
+.logo h1 a {
+    text-decoration: none;
+    color: antiquewhite;
+    text-shadow: 2px 2px 8px rgb(10, 9, 8);
+}
+
+.list ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.list ul li {
+    font-weight: 1rem;
+    font-weight: 500;
+}
+
+.list ul li a {
+    position: relative;
+    text-decoration: none;
+    color: black;
+    overflow: hidden;
+}
+
+.list ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 3px;
+    background-color: turquoise;
+    transition: width 0.3s ease-in-out;
+}
+
+.list ul li a:hover::after {
+    width: 100%;
+}
+
+.little-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 7rem;
+}
+
+.little-content .welcome {
+    font-size: 1.3rem;
+    font-family: cursive;
+}
+
+.little-content img {
+    width: 45%;
+    border: none;
+    border-radius: 2.5rem;
+    box-shadow: 2px 8px 12px rgb(155, 142, 142);
+    transform: rotate(-6deg);
+}
+
+.intro-para {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 2rem 0;
+    width: 100%;
+}
+
+.intro-para .row {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.intro-para .left {
+    flex: 1;
+    min-width: 150px;
+    padding-right: 2rem;
+    text-align: center;
+    margin-left: 20%;
+}
+
+.intro-para .right {
+    flex: 2;
+    min-width: 250px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+}
+
+.intro-para .intro-bottom {
+    margin-top: 0rem;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.foot footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 2.5rem 1rem 2.5rem;
+}
+
+.foot footer .footer-list ul {
+    display: flex;
+    justify-content: space-around;
+    gap: 3rem;
+}
+
+.foot footer .footer-list ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.footer-list ul li a i {
+    margin-right: 8px;
+    font-size: 1.2em;
+    vertical-align: middle;
+}
+
+.signup-section h1 {
+    margin-top: -3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #003049;
+}
+
+.signup-section #signupForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.signup-section #signupForm input {
+    width: 50%;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 2px 4px 12px rgb(152, 150, 150);
+    outline: none;
+}
+
+.signup-section button {
+    display: block;
+    margin: 2rem auto 0 auto;
+    padding: 0.8rem 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    background: rgb(255, 183, 0);
+    color: black;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.signin-section h1 {
+    margin-top: -3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #003049;
+}
+
+.signin-section #signinForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.signin-section #signinForm input {
+    width: 50%;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 2px 4px 12px rgb(152, 150, 150);
+    outline: none;
+}
+
+.signin-section button {
+    display: block;
+    margin: 2rem auto 0 auto;
+    padding: 0.8rem 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    background: turquoise;
+    color: black;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 6rem;
+}
+
+.todo-section {
+    margin-top: -3rem;
+}
+
+.todo-section h1{
+    text-align: center;
+}
+
+.todo-section #todoForm {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.todo-section #todoForm input {
+    padding: 1rem;
+    width: 30%;
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 2px 4px 12px rgb(152, 150, 150);
+    outline: none;
+}
+
+.todo-section button {
+    display: block;
+    margin: 2rem auto 0 auto;
+    padding: 0.8rem 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    background: yellowgreen;
+    color: black;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 4rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.todo-section button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.todos-view {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 0rem;
+}
+
+.todo-view {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6rem;
+}
+
+.todo-card {
+    background: #eeefef;
+    border-radius: 1rem;
+    box-shadow: 2px 4px 12px rgba(0,0,0,0.07);
+    padding: 1.5rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    align-items: flex-start;
+    font-size: larger;
+    font-weight: 500;
+    width: 300px;
+    box-sizing: border-box;
+    word-break: break-word;
+}
+
+.edit-delete-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 0rem;
+}
+
+.edit-btn {
+    padding: 1rem;
+    margin-top: 0.5rem;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 2px 4px 8px grey;
+    font-weight: 600;
+    background-color: rgba(76, 55, 91, 0.32);
+    transition: transform 0.3s ease-in-out;
+}
+
+.edit-btn:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.delete-btn {
+    padding: 1rem;
+    margin-top: 0.5rem;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 2px 4px 8px grey;
+    font-weight: 600;
+    background-color: red;
+    transition: transform 0.3s ease-in-out;
+}
+
+.delete-btn:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.mark-btn {
+    padding: 1rem;
+    margin-top: 0.5rem;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 2px 4px 8px grey;
+    font-weight: 600;
+    background-color: turquoise;
+    transition: transform 0.3s ease-in-out;
+}
+
+.mark-btn:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+#logout-button {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 1rem;
+    width: 40%;
+    font-weight: 600;
+    font-size: 0.8rem;
+    background-color: crimson;
+    transition: transform 0.3s ease-in-out;
+    margin-top: -5px;
+}
+
+#logout-button:hover {
+    cursor: pointer;
+    transform: scale(0.9);
+}
+
+@media (max-width: 1100px) {
+    .todo-view {
+        gap: 2rem;
+    }
+    .todo-card {
+        width: 250px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .list ul {
+        gap: 1rem;
+    }
+    .little-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .todo-view {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        margin: 2rem;
+    }
+    .navBar nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+    .logo {
+        margin-bottom: 0.8rem;
+    }
+    .list {
+        width: 100%;
+    }
+    .logo h1 {
+        font-size: 1.2rem;
+    }
+    .list ul {
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 0.5rem;
+        align-items: flex-start;
+    }
+    .little-content img {
+        width: 90%;
+        margin-bottom: 1rem;
+    }
+    .intro-para .row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .intro-para .left,
+    .intro-para .right {
+        margin-left: 0;
+        padding-right: 0;
+        text-align: left;
+        min-width: unset;
+    }
+    .foot footer {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+    .footer-list ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        align-items: center;
+        justify-content: center;
+    }
+    .footer-list ul li {
+        margin: 0;
+        padding: 0;
+    }
+    .todo-view {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .todo-card {
+        width: 95vw;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 600px) {
+    #logout-button {
+        width: auto;
+        min-width: 120px;
+        padding: 0.8rem 1.2rem;
+        font-size: 1rem;
+    }
+}

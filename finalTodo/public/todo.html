@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your todos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<body>
+    <div class="navBar">
+        <nav>
+            <div class="logo">
+                <h1><a href="index.html">Toodify</a></h1>
+            </div>
+            <div class="list">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="signup.html">Signup</a></li>
+                    <li><a href="signin.html">Login</a></li>
+                    <button id="logout-button" onclick="logout(event)">Logout</button>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="todo-section">
+        <h1>Welcome back! <span id="user" style="color:tomato; text-decoration:underline; font-weight: bolder;"></span> Let <i style="color: rgb(63, 196, 63);">customize</i> our day!</h1>
+        <div id="todoForm">
+            <input type="text" name="title" id="todo-title" placeholder="Add todo..." required>
+        </div>
+        <button id="signup-button" onclick="addTodo(event)">Add</button>
+    </div>
+
+    <div class="todos-view">
+        <div class="todo-view"></div>
+    </div>
+
+    <hr style="width: 90%; margin: 2rem auto;">
+
+    <div class="foot">
+        <footer>
+            <div class="basic-intro"><h2>Toodify</h2></div>
+            <div class="footer-list">
+                <ul>
+                    <li>
+                        <a href="about.html" target="_blank">About Us</a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/praveenkumaryadav1611/" target="_blank">
+                        <i class="fab fa-linkedin" style="color:rgb(19, 144, 194);"></i> LinkedIn
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://x.com/Praveen18611166" target="_blank">
+                            <span style="font-weight: bold; font-size: 1.2em; color: black;">&#120143;</span> Twitter
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Praveen1116" target="_blank">
+                        <i class="fab fa-github"></i> Github
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
