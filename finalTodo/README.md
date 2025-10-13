@@ -78,6 +78,11 @@ npm install
   <img width="1900" height="913" border-radius="2rem" alt="Screenshot 2025-10-11 200102" src="https://github.com/user-attachments/assets/c79524b8-031c-4c8b-8fed-fdd835fd4f84" />
 
 
+## Future-improvements
+   ** Enable Dark-Mode on the app ** 
+   ** Make it with React.js **
+   ** Maybe UI can be improved **
+
 ## 🧑‍💻 Author
 
 - [Praveen Kumar](https://github.com/Praveen1116)
