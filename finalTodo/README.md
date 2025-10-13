@@ -79,9 +79,9 @@ npm install
 
 
 ## Future-improvements
-   ** Enable Dark-Mode on the app ** 
-   ** Make it with React.js **
-   ** Maybe UI can be improved **
+   - **Enable Dark-Mode on the app** 
+   - **Make it with React.js**
+   - **Maybe UI can be improved**
 
 ## 🧑‍💻 Author
 
