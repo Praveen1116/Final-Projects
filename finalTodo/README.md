@@ -1,6 +1,6 @@
 # 📝 Todo-App
 
-A full-stack Todo application built with **Node.js**, **Express**, **MongoDB**, and **JWT Authentication**.
+A full-stack Todo application built with **HTML**, **CSS**, **JS**, **Node.js**, **Express**, **MongoDB**, and **JWT Authentication**.
 
 ## 🚀 Features
 
