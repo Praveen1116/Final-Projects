@@ -1,0 +1,4 @@
+node_modules/
+SkillCast/Backend/node_modules/
+SkillCast/Frontend/node_modules/
+SkillCast/Backend/.env
