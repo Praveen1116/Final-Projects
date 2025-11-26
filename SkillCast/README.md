@@ -1,73 +1,145 @@
-# SkillCast
+# Acadify
 
-SkillCast is a platform for online course management, allowing admins to create and manage courses, and users to enroll and learn.
+Acadify is a full-stack web application for online course management, allowing users to sign up, browse, purchase, and manage courses. Admins can create, edit, and delete courses. The project uses React for the frontend and Node.js/Express with MongoDB for the backend.
+
+---
 
 ## Features
 
-- **Admin Panel:** Add, update, and manage courses.
-- **User Panel:** Sign up, sign in, enroll in courses, and track progress.
-- **Course Management:** CRUD operations for courses.
-- **Authentication:** Secure login/signup for admins and users.
-- **Frontend:** Built with React and Vite.
-- **Backend:** Node.js with Express and MongoDB.
+- **User Authentication:** Signup and Signin for users and admins.
+- **Course Browsing:** Users can view all available courses.
+- **Course Purchase:** Users can buy courses (simulated, no payment gateway yet).
+- **My Courses:** Users can view purchased courses.
+- **Admin Panel:** Admins can view, add, edit, and delete their own courses.
+- **Refund Request:** Users can request a refund via email.
+
+---
+
+## Tech Stack
+
+- **Frontend:** React, CSS
+- **Backend:** Node.js, Express
+- **Database:** MongoDB
+- **Authentication:** JWT
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js & npm
+- MongoDB (local or Atlas)
+- Git
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Praveen1116/Final-Projects/SkillCast.git
+   ```
+
+2. **Backend Setup:**
+   - Go to the backend folder:
+     ```bash
+     cd Backend
+     ```
+   - Install dependencies:
+     ```bash
+     npm install
+     ```
+   - Create a `.env` file and add your MongoDB connection string:
+     ```
+     MONGO_URL=your_mongodb_connection_string
+     JWT_USER_SECRET=your_user_jwt_secret
+     JWT_ADMIN_SECRET=your_admin_jwt_secret
+     ```
+   - Start the backend server:
+     ```bash
+     node index.js
+     or
+     nodemon index.js
+     ```
+
+3. **Frontend Setup:**
+   - Go to the frontend folder:
+     ```bash
+     cd ../frontend
+     ```
+   - Install dependencies:
+     ```bash
+     npm install
+     ```
+   - Start the frontend server:
+     ```bash
+     npm start
+     or
+     npm run dev
+     ```
+
+---
+
+## Usage
+
+- **User:** Sign up, sign in, browse courses, buy courses, view "My Courses".
+- **Admin:** Sign up/sign in, add new courses, edit/delete own courses, view all created courses.
+- **Refund:** Click "Refund" in the footer to send a refund request via email.
+
+---
 
 ## Folder Structure
 
 ```
 SkillCast/
 ├── Backend/
-│   ├── .env
-│   ├── config.js
-│   ├── db.js
-│   ├── index.js
-│   ├── middlewares/
 │   ├── routes/
-│   ├── package.json
-│   └── ...
+│   ├── middlewares/
+│   ├── db.js
+│   └── index.js
 ├── frontend/
 │   ├── src/
-│   ├── public/
-│   ├── package.json
-│   └── ...
+│   │   ├── Admin/
+│   │   ├── pages/
+│   │   ├── Template/
+│   │   ├── App.css
+│   │   └── App.jsx
+│   └── package.json
 └── README.md
 ```
 
-## Getting Started
+---
 
-### Backend
+## API Endpoints
 
-1. Install dependencies:
-   ```
-   cd Backend
-   npm install
-   ```
-2. Set up your `.env` file with required environment variables.
-3. Start the server:
-   ```
-   npm start
-   ```
+### User
 
-### Frontend
+- `POST /api/v1/user/signup` – User registration
+- `POST /api/v1/user/signin` – User login
+- `GET /api/v1/user/purchases` – Get purchased courses
+- `POST /api/v1/user/purchase/:courseId` – Purchase a course
 
-1. Install dependencies:
-   ```
-   cd frontend
-   npm install
-   ```
-2. Start the development server:
-   ```
-   npm run dev
-   ```
+### Admin
 
-## Environment Variables
+- `POST /api/v1/admin/signup` – Admin registration
+- `POST /api/v1/admin/signin` – Admin login
+- `POST /api/v1/admin/course` – Add a course
+- `PUT /api/v1/admin/course/:courseId` – Edit a course
+- `DELETE /api/v1/admin/course/:courseId` – Delete a course
+- `GET /api/v1/admin/course/bulk` – Get all courses created by admin
 
-Create a `.env` file in `Backend` with:
-```
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
-PORT=5000
-```
+### Courses
 
-## Contributing
+- `GET /api/v1/course/preview` – Get all courses
 
-Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+---
+
+## Creator/Author
+
+**Praveen Kumar**  
+[GitHub Profile](https://github.com/Praveen1116)
+
+---
+
+## Contact
+
+For refund requests or queries, email: [kpraveen1116@gmail.com](mailto:kpraveen1116@gmail.com)
