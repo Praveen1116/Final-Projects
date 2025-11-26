@@ -1,23 +1,70 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
 export function MyCourses() {
+  const [courses, setCourses] = useState([]);
+  const userToken = localStorage.getItem("token");
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/api/v1/user/purchases", {
+        headers: { Authorization: `${userToken}` },
+      })
+      .then((res) => setCourses(res.data.purchasedCourses))
+      .catch((err) => setCourses([]));
+  }, [userToken]);
+
   return (
     <>
-      <h3 style="display: flex; justify-content: center; margin-top: 3rem;">
+      <h3
+        style={{ display: "flex", justifyContent: "center", marginTop: "3rem" }}
+      >
         My Courses
       </h3>
 
-      <div class="show-courses">
-        <div class="course-card">
-          <img
-            src="https://imgs.search.brave.com/d_7H8zVn78AQqmzh4cFPJCRywF1lNHS7QLbyCwpb5Rw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4u/c2xpZGVzaGFyZWNk/bi5jb20vc3NfdGh1/bWJuYWlscy9nZHNj/MjQtbWVybnN0YWNr/LTI0MDMxMjA1MDMw/NS0zODRjMDJlZi10/aHVtYm5haWwuanBn/P3dpZHRoPTU2MCZm/aXQ9Ym91bmRz"
-            alt="Course 1"
-          />
-          <h4>MERN Stack</h4>
-          <p>Full MERN Stack from 0-100</p>
-          <p>
-            <b>Price:</b> ₹5499
-          </p>
-          <button>Buy Now</button>
-        </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "right",
+          marginRight: "4rem",
+          marginTop: "1.5rem",
+        }}
+      >
+        <Link
+          to="/courses"
+          style={{
+            textDecoration: "none",
+          }}
+        >
+          <button
+            style={{
+              padding: "1rem",
+              borderRadius: "1rem",
+              color: "black",
+              background: "#db6769ff",
+              width: "140px",
+              fontWeight: "bold",
+              border: "none",
+              cursor: "pointer",
+            }}
+          >
+            Go Back
+          </button>
+        </Link>
+      </div>
+
+      <div className="show-courses">
+        {courses.map((course) => (
+          <div className="course-card" key={course._id}>
+            <img src={course.imageURL} alt={course.title} />
+            <h4>{course.title}</h4>
+            <p>{course.description}</p>
+            <p>
+              <b>Price:</b> ₹{course.price}
+            </p>
+          </div>
+        ))}
       </div>
     </>
   );

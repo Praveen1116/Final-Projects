@@ -1,7 +1,37 @@
+import { Link, useNavigate } from "react-router-dom";
 import { Footer } from "../Template/Footer";
 import { Header } from "../Template/Header";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 export function Courses() {
+  const [courses, setCourses] = useState([]);
+  const navigate = useNavigate();
+  const userToken = localStorage.getItem("token");
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/api/v1/course/preview")
+      .then((res) => setCourses(res.data.courses))
+      .catch(() => setCourses([]));
+  }, []);
+
+  function handlePurchase(courseId) {
+    axios
+      .post(
+        `http://localhost:3000/api/v1/user/purchase/${courseId}`,
+        {},
+        { headers: { Authorization: `${userToken}` } }
+      )
+      .then((res) => {
+        alert(res.data.message);
+        navigate("/my-courses");
+      })
+      .catch((err) => {
+        alert("Error purchasing course");
+      });
+  }
+
   return (
     <>
       <Header />
@@ -11,19 +41,41 @@ export function Courses() {
         Courses
       </h3>
 
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          marginTop: "1.5rem",
+          gap: "0.5rem",
+        }}
+      >
+        <button className="course-btn">
+          <span>Courses</span>
+        </button>
+        <button className="course-btn">
+          <span>
+            <Link
+              to="/my-courses"
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              My-Courses
+            </Link>
+          </span>
+        </button>
+      </div>
+
       <div className="show-courses">
-        <div className="course-card">
-          <img
-            src="https://imgs.search.brave.com/d_7H8zVn78AQqmzh4cFPJCRywF1lNHS7QLbyCwpb5Rw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4u/c2xpZGVzaGFyZWNk/bi5jb20vc3NfdGh1/bWJuYWlscy9nZHNj/MjQtbWVybnN0YWNr/LTI0MDMxMjA1MDMw/NS0zODRjMDJlZi10/aHVtYm5haWwuanBn/P3dpZHRoPTU2MCZm/aXQ9Ym91bmRz"
-            alt="Course 1"
-          />
-          <h4>MERN Stack</h4>
-          <p>Full MERN Stack from 0-100</p>
-          <p>
-            <b>Price:</b> ₹5499
-          </p>
-          <button>Buy Now</button>
-        </div>
+        {courses.slice().reverse().map((course) => (
+          <div className="course-card">
+            <img src={course.imageURL} alt="Course 2" />
+            <h4>{course.title}</h4>
+            <p>{course.description}</p>
+            <p>
+              <b>Price:</b> ₹{course.price}
+            </p>
+            <button onClick={() => handlePurchase(course._id)}>Buy Now</button>
+          </div>
+        ))}
       </div>
 
       <Footer />

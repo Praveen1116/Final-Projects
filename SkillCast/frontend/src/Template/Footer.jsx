@@ -16,7 +16,7 @@ export function Footer() {
                         <Link to="/courses">Courses</Link>
                         <Link to="/privacy">Privacy Policy</Link>
                         <Link to="https://www.linkedin.com/in/praveenkumaryadav1611/" target='_blanck'>Support</Link>
-                        <Link to="refund">Refund</Link>
+                        <Link to="mailto:kpraveen1116@gmail.com">Refund</Link>
                     </div>
 
                     <div className="contact">
