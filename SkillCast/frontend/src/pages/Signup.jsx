@@ -14,7 +14,7 @@ export function Signup() {
   const handleSignup = async () => {
     //setError("");
     try {
-      const response = await fetch("/api/v1/user/signup", {
+      const response = await fetch("https://acadify.onrender.com/api/v1/user/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password, firstName, lastName }),

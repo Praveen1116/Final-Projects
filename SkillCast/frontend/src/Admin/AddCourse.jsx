@@ -21,7 +21,7 @@ export function AddCourse() {
 
   const fetchMyCourses = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/v1/admin/course/bulk", {
+      const response = await fetch("https://acadify.onrender.com/api/v1/admin/course/bulk", {
         headers: {
           "Authorization": token
         }
@@ -46,7 +46,7 @@ export function AddCourse() {
     setSuccess("");
     setError("");
     try {
-      const response = await fetch("http://localhost:3000/api/v1/admin/course", {
+      const response = await fetch("https://acadify.onrender.com/api/v1/admin/course", {
         method: "POST",
         headers: { 
           "Content-Type": "application/json",
@@ -90,7 +90,7 @@ export function AddCourse() {
   const saveEdit = async () => {
     setError("");
     try {
-      const response = await fetch(`http://localhost:3000/api/v1/admin/course/${editId}`, {
+      const response = await fetch(`https://acadify.onrender.com/api/v1/admin/course/${editId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -119,7 +119,7 @@ export function AddCourse() {
   const deleteCourse = async (courseId) => {
     setError("");
     try {
-      const response = await fetch(`http://localhost:3000/api/v1/admin/course/${courseId}`, {
+      const response = await fetch(`https://acadify.onrender.com/api/v1/admin/course/${courseId}`, {
         method: "DELETE",
         headers: {
           "Authorization": token

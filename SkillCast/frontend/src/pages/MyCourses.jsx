@@ -8,7 +8,7 @@ export function MyCourses() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/v1/user/purchases", {
+      .get("https://acadify.onrender.com/api/v1/user/purchases", {
         headers: { Authorization: `${userToken}` },
       })
       .then((res) => setCourses(res.data.purchasedCourses))

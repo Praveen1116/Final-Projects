@@ -27,7 +27,7 @@ export function AdminSignin() {
   const handleSignin = async () => {
     //setError("");
     try {
-      const response = await fetch("/api/v1/admin/signin", {
+      const response = await fetch("https://acadify.onrender.com/api/v1/admin/signin", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),

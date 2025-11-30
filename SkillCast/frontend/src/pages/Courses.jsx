@@ -11,7 +11,7 @@ export function Courses() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/v1/course/preview")
+      .get("https://acadify.onrender.com/api/v1/course/preview")
       .then((res) => setCourses(res.data.courses))
       .catch(() => setCourses([]));
   }, []);
@@ -19,7 +19,7 @@ export function Courses() {
   function handlePurchase(courseId) {
     axios
       .post(
-        `http://localhost:3000/api/v1/user/purchase/${courseId}`,
+        `https://acadify.onrender.com/api/v1/user/purchase/${courseId}`,
         {},
         { headers: { Authorization: `${userToken}` } }
       )
